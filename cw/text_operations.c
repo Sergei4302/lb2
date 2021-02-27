@@ -30,10 +30,10 @@ struct Text get_text(){
         sentence.num_of_words = 0;
         while(inp_sym != L'.') {
             word = malloc(words_buff * sizeof(wchar_t));
-            while (inp_sym != L' ' && inp_sym != L',' && inp_sym != L'.') { //обработка слова
+            while (inp_sym != L' ' && inp_sym != L',' && inp_sym != L'.') { 
                 word[letters_in_word] = inp_sym;
                 letters_in_word++;
-                if (letters_in_word + 5 == words_buff){ //память для счит. слова
+                if (letters_in_word + 5 == words_buff){ 
                     word = realloc(word, words_buff * sizeof(wchar_t));
                     sentence.words = realloc(sentence.words, words_buff  * sizeof(wchar_t*));
                     words_buff += BUFF;
